@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<ToDoItem>;
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div>
+    <table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>IsComplited</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach(var item in Model)
+{
+        <tr>
+            <td>
+                @Html.DisplayFor(modelitem => item.Id)
+            </td>
+            <td>
+                        @Html.DisplayFor(modelitem => item.Name)
+            </td>
+            <td>
+                        @Html.DisplayFor(modelitem => item.Description)
+            </td>
+            <td>
+                        @Html.DisplayFor(modelitem => item.IsComplited)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
